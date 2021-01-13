@@ -1,0 +1,13 @@
+import requests
+import json
+
+url = "https://sandboxdnac.cisco.com:443/dna/intent/api/v1/network-device"
+
+payload={}
+headers = {
+  'x-auth-token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiI1ZTlkYmI3NzdjZDQ3ZTAwNGM2N2RkMGUiLCJhdXRoU291cmNlIjoiaW50ZXJuYWwiLCJ0ZW5hbnROYW1lIjoiVE5UMCIsInJvbGVzIjpbIjVkYzQ0NGQ1MTQ4NWM1MDA0YzBmYjIxMiJdLCJ0ZW5hbnRJZCI6IjVkYzQ0NGQzMTQ4NWM1MDA0YzBmYjIwYiIsImV4cCI6MTYxMDU3NTI3OSwiaWF0IjoxNjEwNTcxNjc5LCJqdGkiOiJiY2VlZWQzNy00ODZjLTQwOGQtYWVkNS05OTFkZDQ5ZWQ4MWUiLCJ1c2VybmFtZSI6ImRldm5ldHVzZXIifQ.dFVIPQ8mAa-ld4AVt158RrrWAWn_NzglpqKT_0rhSysq-JGbuxqa3Q4pm4Sxrn9NbgsJh4EvPjy3JNit7Ko8TE46a9topDZmwitT9G0R-UA9GsVfN8MNBW47n0rHwQ8ZMxoEeZr38CE6ia9MaviEiT2DzOOZMTync14VqS6ctR9S3lOiX3dr1zhfioyg6nLs__geNpzr2Tb7MJy14GAcmpSxKQISm2t0E6aVYbLeaPndy6ZYiGMV9UbF-1JplVqJIuNgUCW2Xlui-N09B20A6YPxOexpq4YIHeErwjE2ixuyYFzpepXsyQqXSU5QHxr5iYv0bOGRqN1gnFyKiFOTeA'
+}
+
+response = requests.request("GET", url, verify=False, headers=headers, data=payload)
+
+print(response.text)
